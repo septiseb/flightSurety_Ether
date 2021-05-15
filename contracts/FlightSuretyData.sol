@@ -12,6 +12,16 @@ contract FlightSuretyData {
     address private contractOwner;                                      // Account used to deploy contract
     bool private operational = true;                                    // Blocks all state changes throughout the contract if false
 
+    struct airlineProfile {
+        bool isRegistered;
+        bool isOperating;
+        uint balance;
+    }
+
+    mapping(address => airlineProfile) private airlines;
+    mapping(address => uint256) private authorizedAirlines;
+
+
     /********************************************************************************************/
     /*                                       EVENT DEFINITIONS                                  */
     /********************************************************************************************/
@@ -21,12 +31,14 @@ contract FlightSuretyData {
     * @dev Constructor
     *      The deploying account becomes contractOwner
     */
-    constructor
+    constructor 
                                 (
+                                    address firstAirlineRegister
                                 ) 
                                 public 
     {
         contractOwner = msg.sender;
+        airlines[firstAirlineRegister] = airlineProfile(true,false,0); // the first airline when it is deployed
     }
 
     /********************************************************************************************/
@@ -55,6 +67,7 @@ contract FlightSuretyData {
         require(msg.sender == contractOwner, "Caller is not contract owner");
         _;
     }
+
 
     /********************************************************************************************/
     /*                                       UTILITY FUNCTIONS                                  */
