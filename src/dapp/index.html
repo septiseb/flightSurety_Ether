@@ -19,12 +19,74 @@
         </button>
     </nav>
 
-    <main class="container">
+    <main>
+        <div class="container">
+            <div id="display-wrapper">
 
-        <div id="display-wrapper" class="top-20">
-        </div>
-        <div class="row top-20">
-            <label class="form">Flight</label> <input type="text" id="flight-number"> <btn class="btn btn-primary" id="submit-oracle">Submit to Oracles</btn>
+            </div>
+
+            <div class="display-wrapper">
+                <div class="top-20">
+                    <h2>New Airlines</h2>
+                </div>
+                <div class="row top-20">
+                    <label class="form" for="airline-add">Add New Airline</label> 
+                    <input type="text" id="airline-add"> <btn class="btn btn-primary" id="add-airline">Add/Vote</btn>
+                    <label class="form" for="airline-pay">Pay For Airline - 10 ETH (Enter address for airline that is being paid for, not ETH amount.  That's set automatically.)</label> 
+                    <input type="text" id="airline-pay"> <btn class="btn btn-primary" id="pay-airline">Pay</btn>
+                </div>
+            </div>
+
+            <div class="display-wrapper">
+                <div class="top-20">
+                    <h2>New Flight</h2>
+                </div>
+                <div class="row top-20">
+                    <label class="form" for="new-flight-number">Flight Number</label> 
+                    <input type="text" id="new-flight-number"> <btn class="btn btn-primary" id="add-flight">Add Flight</btn>
+
+                </div>
+            </div>
+
+            <div id="flight-wrapper" class="display-wrapper">
+                <div class="top-20">
+                    <h2>Registered Flights</h2>
+                </div>
+                <div class="row top-20">
+                    <btn class="btn btn-primary" id="get-flights">Get Flights</btn>
+                </div>
+            </div>
+
+            <div class="display-wrapper">
+                <div class="top-20">
+                    <h2>New Insurance Policy</h2>
+                </div>
+                <div class="row top-20">
+                    <label class="form" for="insurance-payment">Insurance Payment(up to 1 ETH)</label> 
+                    <input type="text" id="insurance-payment"> 
+
+                    <label class="form" for="insurance-flight-number">Flight Key</label> 
+                    <input type="text" id="insurance-flight-number"> <btn class="btn btn-primary" id="add-policy">Add Policy</btn>
+                </div>
+            </div>
+
+            <div class="display-wrapper">
+                <div class="top-20">
+                    <h2>Check Flight Status</h2>
+                </div>
+                <div class="row top-20">
+                    <label class="form">Flight</label> <input type="text" id="flight-number"> <btn class="btn btn-primary" id="submit-oracle">Submit to Oracles</btn>
+                </div>
+            </div>
+
+            <div id="withdraw-wrapper" class="display-wrapper">
+                <div class="top-20">
+                    <h2>Withdraw Funds</h2>
+                </div>
+                <div class="row top-20">
+                    <btn class="btn btn-primary" id="withdraw">Withdraw</btn>
+                </div>
+            </div>
         </div>
     </main>
 

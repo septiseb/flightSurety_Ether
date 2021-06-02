@@ -12,6 +12,13 @@ body {
     padding: 40px;
 }
 
+.display-wrapper {
+    border: solid 2px #fff;
+    padding: 15px;
+    margin: 15px;
+    overflow-wrap: break-word;
+}
+
 .top-20 {
     margin-top: 20px;
 }
@@ -22,6 +29,10 @@ h5 {
 
 section {
     margin-bottom: 50px;
+}
+
+.form {
+    padding: 10px;
 }
 
 .field {
